@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(/.claude/skills/sql-optimization/**)",
+      "Bash(git init:*)",
+      "Bash(git remote:*)"
+    ]
+  }
+}
