@@ -51,25 +51,155 @@ cp -r MyClaudeSkills/.agents/skills/* ~/.claude/skills/
 
 ## Usage
 
+Skills in Claude Code are automatically triggered based on your task context. Once installed, Claude will invoke them when relevant.
+
 ### sql-optimization
 
-The skill automatically triggers when you work with SQL queries or database optimization tasks:
+**When it triggers:**
+- Working with SQL queries or database optimization
+- Analyzing query performance
+- Designing database indexes
+- Reviewing execution plans
 
+**Example prompts:**
+
+```bash
+# Query optimization
+"Help me optimize this slow query in users.sql"
+
+# Index recommendations
+"What indexes should I add for better performance on the orders table?"
+
+# Execution plan analysis
+"Analyze the execution plan for this query and suggest improvements"
+
+# Pagination optimization
+"Convert this OFFSET-based pagination to cursor-based"
+
+# Anti-pattern detection
+"Review my SQL code for performance anti-patterns"
 ```
-"Help me optimize this slow query"
-"Analyze the execution plan for this SQL"
-"What indexes should I add for better performance?"
+
+**Working with files:**
+```bash
+# Optimize a specific SQL file
+claude "Optimize the queries in database/migrations/001_create_users.sql"
+
+# Review entire project
+claude "Review all SQL files in this project for performance issues"
 ```
+
+**Example workflow:**
+1. Open a SQL file or paste a query
+2. Ask Claude to optimize it
+3. The skill provides:
+   - Optimized query version
+   - Index recommendations with CREATE INDEX statements
+   - Explanation of improvements
+   - Performance impact analysis
 
 ### skill-creator
 
-Use when creating or improving skills:
+**When it triggers:**
+- Creating new skills from scratch
+- Improving existing skills
+- Running skill evaluations
+- Optimizing skill descriptions
 
+**Example prompts:**
+
+```bash
+# Create a new skill
+"Create a new skill for processing PDF documents"
+
+# Improve existing skill
+"Improve my existing skill at ~/.claude/skills/my-skill with better test cases"
+
+# Run evaluations
+"Run benchmarks on the pdf-processor skill"
+
+# Optimize description
+"Optimize the description for my skill to improve triggering accuracy"
 ```
-"Create a new skill for PDF processing"
-"Improve my existing skill with better test cases"
-"Run benchmarks on this skill"
+
+**Complete workflow example:**
+
+```bash
+# 1. Start skill creation
+claude "Create a skill that helps with Docker configuration"
+
+# 2. Claude will:
+#    - Interview you about requirements
+#    - Draft the SKILL.md
+#    - Create test cases
+#    - Run evaluations
+
+# 3. Review and iterate
+#    - Claude opens a browser with test results
+#    - You provide feedback
+#    - Claude improves the skill
+
+# 4. Package and install
+#    - Claude packages the skill as .skill file
+#    - Install: claude skill install ./my-skill.skill
 ```
+
+**Advanced usage:**
+
+```bash
+# Create skill from existing workflow
+"Turn this conversation into a skill"
+
+# Benchmark with variance analysis
+"Run 10 iterations of benchmarks on my-skill to measure consistency"
+
+# Description optimization
+"Optimize the trigger description for better accuracy"
+```
+
+### Using Skills in Different Environments
+
+**Claude Code CLI:**
+```bash
+# Skills trigger automatically
+claude "optimize this query: SELECT * FROM users WHERE created_at > '2024-01-01'"
+```
+
+**Claude Code Desktop/Web:**
+- Skills trigger automatically in conversations
+- Use `/skill-name` to explicitly invoke a skill
+- Check available skills with `/skills`
+
+**VS Code / JetBrains Extensions:**
+- Skills work in the Claude Code panel
+- Right-click files and select "Ask Claude" for context-aware help
+
+## Tips for Best Results
+
+**For sql-optimization:**
+- Provide the full query context (tables, indexes, data volume)
+- Share execution plans when available
+- Mention your database system (MySQL, PostgreSQL, etc.)
+- Include performance metrics if you have them
+
+**For skill-creator:**
+- Be specific about what the skill should do
+- Provide example inputs and expected outputs
+- Test with realistic scenarios
+- Iterate based on evaluation feedback
+
+## Troubleshooting
+
+**Skill not triggering?**
+- Check installation: `claude skill list`
+- Try explicit invocation: `/sql-optimization` or `/skill-creator`
+- Verify skill description matches your use case
+- Update skills: `claude skill update`
+
+**Need help?**
+- Check Claude Code docs: `claude help`
+- View skill details: `claude skill info skill-name`
+- Report issues on GitHub
 
 ## Repository Structure
 
