@@ -1,5 +1,10 @@
 # MyClaudeSkills
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/duynguyen71/MyClaudeSkills.svg)](https://github.com/duynguyen71/MyClaudeSkills/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/duynguyen71/MyClaudeSkills.svg)](https://github.com/duynguyen71/MyClaudeSkills/network)
+[![GitHub issues](https://img.shields.io/github/issues/duynguyen71/MyClaudeSkills.svg)](https://github.com/duynguyen71/MyClaudeSkills/issues)
+
 A collection of custom skills for Claude Code to enhance SQL optimization and skill development workflows.
 
 ## Available Skills
