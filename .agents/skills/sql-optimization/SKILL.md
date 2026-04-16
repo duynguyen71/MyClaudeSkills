@@ -1,6 +1,18 @@
 ---
 name: sql-optimization
 description: 'Universal SQL performance optimization assistant for comprehensive query tuning, indexing strategies, and database performance analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle). Provides execution plan analysis, pagination optimization, batch operations, and performance monitoring guidance.'
+version: 1.0.0
+category: database
+tags: [sql, performance, optimization, indexing, query-tuning, database]
+prerequisites:
+  - Basic SQL knowledge
+  - Access to database or SQL files
+  - Understanding of database concepts (tables, indexes, queries)
+references:
+  - https://use-the-index-luke.com/
+  - https://www.postgresql.org/docs/current/performance-tips.html
+  - https://dev.mysql.com/doc/refman/8.0/en/optimization.html
+  - https://docs.microsoft.com/en-us/sql/relational-databases/performance/performance-monitoring-and-tuning-tools
 ---
 
 # SQL Performance Optimization Assistant
