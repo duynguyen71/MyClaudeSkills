@@ -29,24 +29,87 @@ Create new skills, modify and improve existing skills, and measure skill perform
 
 ## Installation
 
-### Using Claude Code CLI
+### Quick Install (Recommended)
+
+Install all skills at once:
 
 ```bash
-# Install from GitHub
+# Install both skills with one command
+claude skill install duynguyen71/MyClaudeSkills/sql-optimization duynguyen71/MyClaudeSkills/skill-creator
+```
+
+Or install individually:
+
+```bash
+# Install sql-optimization only
 claude skill install duynguyen71/MyClaudeSkills/sql-optimization
+
+# Install skill-creator only
 claude skill install duynguyen71/MyClaudeSkills/skill-creator
 ```
 
-### Manual Installation
+### Auto-Update Setup
+
+Enable automatic updates to always get the latest improvements:
+
+```bash
+# Enable auto-update for all skills
+claude skill auto-update enable
+
+# Or enable for specific skills
+claude skill auto-update enable sql-optimization skill-creator
+
+# Check auto-update status
+claude skill auto-update status
+```
+
+**Manual update when needed:**
+```bash
+# Update all skills
+claude skill update
+
+# Update specific skill
+claude skill update sql-optimization
+```
+
+### Fast Installation Script
+
+Create a quick install script for easy setup:
+
+```bash
+# Create install script
+cat > install-skills.sh << 'EOF'
+#!/bin/bash
+echo "Installing MyClaudeSkills..."
+claude skill install duynguyen71/MyClaudeSkills/sql-optimization
+claude skill install duynguyen71/MyClaudeSkills/skill-creator
+claude skill auto-update enable sql-optimization skill-creator
+echo "✓ Installation complete!"
+claude skill list
+EOF
+
+chmod +x install-skills.sh
+./install-skills.sh
+```
+
+### Manual Installation (Alternative)
+
+If you prefer manual control:
 
 1. Clone this repository:
 ```bash
 git clone git@github.com:duynguyen71/MyClaudeSkills.git
+cd MyClaudeSkills
 ```
 
 2. Copy skills to your Claude skills directory:
 ```bash
-cp -r MyClaudeSkills/.agents/skills/* ~/.claude/skills/
+cp -r .agents/skills/* ~/.claude/skills/
+```
+
+3. Verify installation:
+```bash
+claude skill list
 ```
 
 ## Usage
@@ -196,10 +259,21 @@ claude "optimize this query: SELECT * FROM users WHERE created_at > '2024-01-01'
 - Verify skill description matches your use case
 - Update skills: `claude skill update`
 
+**Installation issues?**
+- Verify Claude Code is installed: `claude --version`
+- Check network connection for GitHub access
+- Try manual installation method
+- Clear skill cache: `rm -rf ~/.claude/skills/.cache`
+
+**Update not working?**
+- Check auto-update status: `claude skill auto-update status`
+- Manually update: `claude skill update --force`
+- Reinstall if needed: `claude skill uninstall skill-name && claude skill install ...`
+
 **Need help?**
 - Check Claude Code docs: `claude help`
 - View skill details: `claude skill info skill-name`
-- Report issues on GitHub
+- Report issues on GitHub: https://github.com/duynguyen71/MyClaudeSkills/issues
 
 ## Repository Structure
 
