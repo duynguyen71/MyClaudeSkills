@@ -27,6 +27,21 @@ Create new skills, modify and improve existing skills, and measure skill perform
 - Description optimization for better triggering
 - Skill packaging for distribution
 
+### ui-ux-pro-max
+UI/UX design intelligence for web and mobile applications with comprehensive design systems and guidelines.
+
+**Features:**
+- 50+ design styles (glassmorphism, neumorphism, brutalism, minimalism, etc.)
+- 161 color palettes with accessibility guidelines
+- 57 font pairings for professional typography
+- 161 product types with design reasoning
+- 99 UX guidelines and best practices
+- 25 chart types for data visualization
+- Support for 10 tech stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, HTML/CSS)
+- Component design and review
+- Accessibility compliance checking
+- Responsive design patterns
+
 ## Installation
 
 ### Quick Install (Recommended)
@@ -34,8 +49,8 @@ Create new skills, modify and improve existing skills, and measure skill perform
 Install all skills at once:
 
 ```bash
-# Install both skills with one command
-claude skill install duynguyen71/MyClaudeSkills/sql-optimization duynguyen71/MyClaudeSkills/skill-creator
+# Install all three skills with one command
+claude skill install duynguyen71/MyClaudeSkills/sql-optimization duynguyen71/MyClaudeSkills/skill-creator duynguyen71/MyClaudeSkills/ui-ux-pro-max
 ```
 
 Or install individually:
@@ -46,6 +61,9 @@ claude skill install duynguyen71/MyClaudeSkills/sql-optimization
 
 # Install skill-creator only
 claude skill install duynguyen71/MyClaudeSkills/skill-creator
+
+# Install ui-ux-pro-max only
+claude skill install duynguyen71/MyClaudeSkills/ui-ux-pro-max
 ```
 
 ### Auto-Update Setup
@@ -83,7 +101,8 @@ cat > install-skills.sh << 'EOF'
 echo "Installing MyClaudeSkills..."
 claude skill install duynguyen71/MyClaudeSkills/sql-optimization
 claude skill install duynguyen71/MyClaudeSkills/skill-creator
-claude skill auto-update enable sql-optimization skill-creator
+claude skill install duynguyen71/MyClaudeSkills/ui-ux-pro-max
+claude skill auto-update enable sql-optimization skill-creator ui-ux-pro-max
 echo "✓ Installation complete!"
 claude skill list
 EOF
@@ -226,6 +245,7 @@ claude "Create a skill that helps with Docker configuration"
 ```bash
 # Skills trigger automatically
 claude "optimize this query: SELECT * FROM users WHERE created_at > '2024-01-01'"
+claude "design a modern dashboard with glassmorphism style"
 ```
 
 **Claude Code Desktop/Web:**
@@ -236,6 +256,62 @@ claude "optimize this query: SELECT * FROM users WHERE created_at > '2024-01-01'
 **VS Code / JetBrains Extensions:**
 - Skills work in the Claude Code panel
 - Right-click files and select "Ask Claude" for context-aware help
+
+### ui-ux-pro-max
+
+**When it triggers:**
+- Designing new pages or components
+- Creating or refactoring UI elements
+- Choosing color schemes and typography
+- Reviewing UI code for UX quality
+- Implementing responsive designs
+- Building design systems
+
+**Example prompts:**
+
+```bash
+# Design new components
+"Create a modern glassmorphism login form with React and Tailwind"
+
+# Color and typography
+"Suggest a professional color palette for a SaaS dashboard"
+"What font pairings work well for a fintech app?"
+
+# Component review
+"Review this button component for accessibility and UX best practices"
+
+# Responsive design
+"Make this navbar responsive with mobile-first approach"
+
+# Design systems
+"Create a design system for an e-commerce platform using shadcn/ui"
+```
+
+**Working with different stacks:**
+```bash
+# React/Next.js
+"Build a bento grid layout with Next.js and Tailwind"
+
+# Vue/Svelte
+"Create a minimalist dashboard with Vue 3 and Composition API"
+
+# Mobile
+"Design a SwiftUI card component with neumorphism style"
+"Build a Flutter bottom sheet with smooth animations"
+
+# Design review
+"Review my React component for UX issues and accessibility"
+```
+
+**Example workflow:**
+1. Describe your design needs
+2. The skill provides:
+   - Design recommendations with reasoning
+   - Code implementation in your chosen stack
+   - Color palette and typography suggestions
+   - Accessibility guidelines
+   - Responsive design patterns
+3. Review and iterate on the design
 
 ## Tips for Best Results
 
@@ -250,6 +326,13 @@ claude "optimize this query: SELECT * FROM users WHERE created_at > '2024-01-01'
 - Provide example inputs and expected outputs
 - Test with realistic scenarios
 - Iterate based on evaluation feedback
+
+**For ui-ux-pro-max:**
+- Specify your tech stack (React, Vue, SwiftUI, etc.)
+- Mention the product type (dashboard, landing page, mobile app)
+- Describe your desired style (minimalism, glassmorphism, etc.)
+- Include accessibility requirements
+- Share brand colors or design constraints if any
 
 ## Troubleshooting
 
@@ -283,12 +366,16 @@ MyClaudeSkills/
 │   └── skills/
 │       ├── sql-optimization/
 │       │   └── SKILL.md
-│       └── skill-creator/
+│       ├── skill-creator/
+│       │   ├── SKILL.md
+│       │   ├── agents/
+│       │   ├── references/
+│       │   ├── scripts/
+│       │   └── eval-viewer/
+│       └── ui-ux-pro-max/
 │           ├── SKILL.md
-│           ├── agents/
-│           ├── references/
-│           ├── scripts/
-│           └── eval-viewer/
+│           ├── data/
+│           └── scripts/
 ├── skills-lock.json
 └── README.md
 ```
