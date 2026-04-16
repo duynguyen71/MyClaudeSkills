@@ -9,9 +9,10 @@ A collection of custom skills for Claude Code to enhance SQL optimization and sk
 
 ## Available Skills
 
-### sql-optimization
+### sql-optimization (v1.0.0)
 Universal SQL performance optimization assistant for comprehensive query tuning, indexing strategies, and database performance analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle).
 
+**Category:** Database  
 **Features:**
 - Query performance analysis and optimization
 - Index strategy recommendations
@@ -21,9 +22,10 @@ Universal SQL performance optimization assistant for comprehensive query tuning,
 - Anti-pattern detection
 - Database-agnostic best practices
 
-### skill-creator
+### skill-creator (v1.0.0)
 Create new skills, modify and improve existing skills, and measure skill performance.
 
+**Category:** Development  
 **Features:**
 - Skill creation from scratch
 - Iterative skill improvement workflow
@@ -32,9 +34,10 @@ Create new skills, modify and improve existing skills, and measure skill perform
 - Description optimization for better triggering
 - Skill packaging for distribution
 
-### ui-ux-pro-max
+### ui-ux-pro-max (v1.0.0)
 UI/UX design intelligence for web and mobile applications with comprehensive design systems and guidelines.
 
+**Category:** Design  
 **Features:**
 - 50+ design styles (glassmorphism, neumorphism, brutalism, minimalism, etc.)
 - 161 color palettes with accessibility guidelines
@@ -47,6 +50,40 @@ UI/UX design intelligence for web and mobile applications with comprehensive des
 - Accessibility compliance checking
 - Responsive design patterns
 
+### unity-game-studio
+Claude Code Game Studios - Turn a single Claude Code session into a full game development studio.
+
+**Category:** Game Development  
+**Features:**
+- 48 specialized agents (directors, leads, specialists)
+- 37 game development workflows
+- 8 quality gate hooks
+- 11 coding standards rules
+- Support for Unity, Unreal Engine, and Godot
+- Complete studio hierarchy (creative, technical, production)
+- Agents: game designer, programmer, artist, audio, QA, producer, and more
+- Skills: brainstorming, prototyping, sprint planning, code review, asset audit, release management
+- Collaborative design protocol
+- Context management for long sessions
+
+### react
+Skills for React application development.
+
+**Category:** Frontend  
+**Status:** Coming soon
+
+### springboot
+Skills for Spring Boot application development.
+
+**Category:** Backend  
+**Status:** Coming soon
+
+### sql
+Additional SQL database development and optimization skills.
+
+**Category:** Database  
+**Status:** Coming soon
+
 ## Installation
 
 ### Quick Install (Recommended)
@@ -54,21 +91,28 @@ UI/UX design intelligence for web and mobile applications with comprehensive des
 Install all skills at once:
 
 ```bash
-# Install all three skills with one command
-claude skill install duynguyen71/MyClaudeSkills/sql-optimization duynguyen71/MyClaudeSkills/skill-creator duynguyen71/MyClaudeSkills/ui-ux-pro-max
+# Install all skills with one command
+claude skill install \
+  duynguyen71/MyClaudeSkills/sql-optimization \
+  duynguyen71/MyClaudeSkills/skill-creator \
+  duynguyen71/MyClaudeSkills/ui-ux-pro-max \
+  duynguyen71/MyClaudeSkills/unity-game-studio
 ```
 
 Or install individually:
 
 ```bash
-# Install sql-optimization only
+# Database skills
 claude skill install duynguyen71/MyClaudeSkills/sql-optimization
 
-# Install skill-creator only
+# Development skills
 claude skill install duynguyen71/MyClaudeSkills/skill-creator
 
-# Install ui-ux-pro-max only
+# Design skills
 claude skill install duynguyen71/MyClaudeSkills/ui-ux-pro-max
+
+# Game development
+claude skill install duynguyen71/MyClaudeSkills/unity-game-studio
 ```
 
 ### Auto-Update Setup
@@ -107,7 +151,8 @@ echo "Installing MyClaudeSkills..."
 claude skill install duynguyen71/MyClaudeSkills/sql-optimization
 claude skill install duynguyen71/MyClaudeSkills/skill-creator
 claude skill install duynguyen71/MyClaudeSkills/ui-ux-pro-max
-claude skill auto-update enable sql-optimization skill-creator ui-ux-pro-max
+claude skill install duynguyen71/MyClaudeSkills/unity-game-studio
+claude skill auto-update enable sql-optimization skill-creator ui-ux-pro-max unity-game-studio
 echo "✓ Installation complete!"
 claude skill list
 EOF
@@ -369,20 +414,30 @@ claude "design a modern dashboard with glassmorphism style"
 MyClaudeSkills/
 ├── .agents/
 │   └── skills/
-│       ├── sql-optimization/
-│       │   └── SKILL.md
-│       ├── skill-creator/
-│       │   ├── SKILL.md
-│       │   ├── agents/
-│       │   ├── references/
-│       │   ├── scripts/
-│       │   └── eval-viewer/
-│       └── ui-ux-pro-max/
-│           ├── SKILL.md
-│           ├── data/
-│           └── scripts/
-├── skills-lock.json
-└── README.md
+│       ├── sql-optimization/      (v1.0.0 - database)
+│       ├── skill-creator/         (v1.0.0 - development)
+│       ├── ui-ux-pro-max/         (v1.0.0 - design)
+│       ├── unity-game-studio/     (game development)
+│       ├── react/                 (frontend - coming soon)
+│       ├── springboot/            (backend - coming soon)
+│       └── sql/                   (database - coming soon)
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   ├── feature_request.md
+│   │   └── skill_request.md
+│   └── PULL_REQUEST_TEMPLATE.md
+├── LICENSE
+├── README.md
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── IMPROVEMENTS.md
+├── IMPROVEMENT_SUMMARY.md
+├── ANDROID_SKILLS_ANALYSIS.md
+├── SESSION_SUMMARY.md
+├── .gitignore
+└── skills-lock.json
 ```
 
 ## Contributing
