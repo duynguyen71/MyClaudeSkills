@@ -173,7 +173,7 @@ cd MyClaudeSkills
 
 2. Copy skills to your Claude skills directory:
 ```bash
-cp -r .agents/skills/* ~/.claude/skills/
+cp -r skills/* ~/.claude/skills/
 ```
 
 3. Verify installation:
@@ -412,15 +412,14 @@ claude "design a modern dashboard with glassmorphism style"
 
 ```
 MyClaudeSkills/
-├── .agents/
-│   └── skills/
-│       ├── sql-optimization/      (v1.0.0 - database)
-│       ├── skill-creator/         (v1.0.0 - development)
-│       ├── ui-ux-pro-max/         (v1.0.0 - design)
-│       ├── unity-game-studio/     (game development)
-│       ├── react/                 (frontend - coming soon)
-│       ├── springboot/            (backend - coming soon)
-│       └── sql/                   (database - coming soon)
+├── skills/
+│   ├── sql-optimization/      (v1.0.0 - database)
+│   ├── skill-creator/         (v1.0.0 - development)
+│   ├── ui-ux-pro-max/         (v1.0.0 - design)
+│   ├── unity-game-studio/     (game development)
+│   ├── react/                 (frontend - coming soon)
+│   ├── springboot/            (backend - coming soon)
+│   └── sql/                   (database - coming soon)
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── bug_report.md
